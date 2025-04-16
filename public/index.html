@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Davidovici Software - Innovative web development tailored for your business." />
+    <meta property="og:title" content="Davidovici Software">
+    <meta property="og:description" content="Web development solutions that are professional, clean, and tailored to your needs.">
+    <meta property="og:image" content="/images/hero-bg.jpg">
+    <meta property="og:type" content="website">
     <title>Davidovici Software</title>
-    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="/js/main.js" defer></script>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/css/tailwind.css">
     <style>
         body {
           font-family: 'JetBrains Mono', monospace;
@@ -22,6 +28,9 @@
         .delay-150 { animation-delay: 0.15s; }
         .delay-300 { animation-delay: 0.3s; }
         .delay-450 { animation-delay: 0.45s; }
+        .delay-600 { animation-delay: 0.6s; }
+        .delay-750 { animation-delay: 0.75s; }
+        .delay-900 { animation-delay: 0.9s; }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100 dark:bg-gray-900 dark:text-gray-100">
@@ -36,15 +45,21 @@
     </div>
 </nav>
 
-<!-- Hero Section -->
-<section id="hero" class="min-h-screen flex flex-col items-center justify-center text-center animate-fadeIn" style="background: url('/images/hero-bg.jpg') no-repeat center center/cover;">
-    <h1 class="text-5xl font-bold mb-4">Welcome to Davidovici Software</h1>
-    <p class="text-xl mb-8">Innovative Web Development Solutions Tailored For You</p>
-    <a href="#contact" class="px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">Get In Touch</a>
+<section id="hero" class="relative min-h-screen flex items-center justify-center text-center" style="background: url('/images/hero-bg.jpg') no-repeat center center/cover;">
+    <!-- Gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-gray-900/80 to-gray-800/90 z-0"></div>
+
+    <div class="relative z-10 max-w-3xl px-4 animate-fadeInUp">
+        <h1 class="text-5xl font-bold mb-4 text-white drop-shadow-md">Welcome to Davidovici Software</h1>
+        <p class="text-xl mb-8 text-gray-300">Innovative Web Development Solutions Tailored For You</p>
+        <a href="#contact" class="px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300 shadow-lg">
+            Get In Touch
+        </a>
+    </div>
 </section>
 
 <!-- Services Section -->
-<section id="services" class="py-20 bg-gray-800">
+<section id="services" class="py-20 bg-gray-800" data-reveal>
     <div class="container mx-auto px-6 text-center">
         <h2 class="text-3xl font-bold mb-12 animate-fadeIn">Our Services</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -59,6 +74,18 @@
             <div class="p-6 bg-gray-700 rounded-lg shadow hover:shadow-lg transform hover:-translate-y-1 transition animate-fadeIn delay-450">
                 <h3 class="text-xl font-semibold mb-4">Consulting</h3>
                 <p>Offering expert advice to elevate your digital presence.</p>
+            </div>
+            <div class="p-6 bg-gray-700 rounded-lg shadow hover:shadow-lg transform hover:-translate-y-1 transition animate-fadeIn delay-600">
+                <h3 class="text-xl font-semibold mb-4">Web Scraping</h3>
+                <p>Extracting and structuring data from websites for business intelligence.</p>
+            </div>
+            <div class="p-6 bg-gray-700 rounded-lg shadow hover:shadow-lg transform hover:-translate-y-1 transition animate-fadeIn delay-750">
+                <h3 class="text-xl font-semibold mb-4">Data Analysis</h3>
+                <p>Turning raw data into insights through analysis and visualization.</p>
+            </div>
+            <div class="p-6 bg-gray-700 rounded-lg shadow hover:shadow-lg transform hover:-translate-y-1 transition animate-fadeIn delay-900">
+                <h3 class="text-xl font-semibold mb-4">Automation</h3>
+                <p>Custom scripts and workflows to reduce manual effort and save time.</p>
             </div>
         </div>
     </div>
@@ -81,23 +108,14 @@
 <section id="contact" class="py-20 bg-gray-800">
     <div class="container mx-auto px-6 text-center">
         <h2 class="text-3xl font-bold mb-12 animate-fadeIn">Contact Us</h2>
-        <form class="max-w-md mx-auto bg-gray-700 p-8 rounded-lg shadow animate-fadeIn delay-150">
-            <div class="mb-4">
-                <label class="block mb-2">Name</label>
-                <input type="text" class="w-full p-3 rounded bg-gray-800 border" placeholder="Your Name">
-            </div>
-            <div class="mb-4">
-                <label class="block mb-2">Email</label>
-                <input type="email" class="w-full p-3 rounded bg-gray-800 border" placeholder="Your Email">
-            </div>
-            <div class="mb-4">
-                <label class="block mb-2">Message</label>
-                <textarea class="w-full p-3 rounded bg-gray-800 border" placeholder="Your Message"></textarea>
-            </div>
-            <button type="submit" class="w-full py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition animate-fadeIn delay-300">
-                Send Message
-            </button>
-        </form>
+        <div class="max-w-xl mx-auto bg-gray-700 p-8 rounded-lg shadow animate-fadeIn delay-150">
+            <p class="text-lg">
+                You can reach us directly at
+                <a href="mailto:yaakov@davidovicisoftware.com" class="text-blue-400 underline hover:text-blue-600">
+                    yaakov@davidovicisoftware.com
+                </a>.
+            </p>
+        </div>
     </div>
 </section>
 
